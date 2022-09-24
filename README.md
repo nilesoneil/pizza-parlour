@@ -24,11 +24,13 @@ _A webpage for ordering pizza_
 
 ## Tests
 
-Describe: 
+Describe: Pizza()
 
-Test: 
-Code:
-Expected Output:
+Test: It should return a pizza object with properties for size, and toppings.
+
+Code: pizza("medium", "pepperoni")
+
+Expected Output: Pizza { size: medium; toppings: pepperoni; }
 
 
 
