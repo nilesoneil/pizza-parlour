@@ -17,23 +17,24 @@
       </select>
     </div>
     <h2> Select your toppings: </h2>
-    <form id="pizzaToppings">
-      <p> Select all you toppings </p>
-      <label>
-        <input type="checkbox" name="ingredient" value="artichoke_hearts">
-        Artichoke Hearts.
-      </label><br>
-      <label>
-        <input type="checkbox" name="ingredient" value="jalapenos">
-        Jalapenos.
-      </label><br>
-      <label>
-        <input type="checkbox" name="ingredient" value="feta">
-        Feta Cheese
-      </label><br>
-      <button type="submit">Submit Survey</button>
-    </form>
-      
+    <div class="order">
+      <form id="pizzaToppings">
+        <p> Select all you toppings </p>
+        <label>
+          <input type="checkbox" name="ingredient" value="artichoke_hearts">
+          Artichoke Hearts.
+        </label><br>
+        <label>
+          <input type="checkbox" name="ingredient" value="jalapenos">
+          Jalapenos.
+        </label><br>
+        <label>
+          <input type="checkbox" name="ingredient" value="feta">
+          Feta Cheese
+        </label><br>
+      </form>
+      <button type="submit">Place Order</button>
+    </div>
     <div id="finalPie">
       <h3> Your pizza costs: </h3> <span id="priceResult"> </span>
     </div>

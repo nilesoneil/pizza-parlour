@@ -10,7 +10,7 @@ Pizza.prototype.addSize = function(pizzaSize) {
 
 Pizza.prototype.addToppings = function(toppings) {
   this.toppings += 1;
-}
+};
 
 Pizza.prototype.priceOfPizza = function() {
   this.price = 0;
@@ -24,8 +24,12 @@ Pizza.prototype.priceOfPizza = function() {
     this.price += 18;
   }
   return this.price;
-}
+};
 
+Pizza.prototype.orderOut = function() {
+  let describeOrder = "You pizza is a " + this.size + " and costs $" + this.price;
+  return describeOrder;
+};
 //UI Logic
 
 function handleForm(event) {
@@ -39,6 +43,11 @@ function handleForm(event) {
     }
   };
 
-//window.addEventListener("load", function() {
- // document.querySelector("form#pizzaToppings").addEventListener("submit", handleForm);
-//});
+  let pizzaOrder = new Pizza(pizzaSize, checkedToppings)
+  let orderOutput = pizzaOrder.orderOut();
+
+};
+
+window.addEventListener("load", function() {
+  document.querySelector("form#pizzaToppings").addEventListener("submit", handleForm);
+});
