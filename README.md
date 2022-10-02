@@ -32,8 +32,21 @@ Code: pizza("medium", "pepperoni")
 
 Expected Output: Pizza { size: medium; toppings: pepperoni; }
 
+Describe: priceOfPizza()
 
+Test: It should calculate cost of pizza.
 
+Code: priceOfPizza();
+
+Expected Output: "$15"
+
+Describe: orderOut()
+
+Test: It should return a string telling you size and cost of pizza.
+
+Code : orderOut()
+
+Expected Output: "You pizza is a " + this.size + " and costs $" + this.price"
 ## Known Bugs
 
 * _None_

@@ -46,8 +46,11 @@ function handleForm(event) {
   let pizzaOrder = new Pizza(pizzaSize, checkedToppings)
   let orderOutput = pizzaOrder.orderOut();
 
+  document.getElementById("finalPie").innerText = orderOutput
+  document.getElementById("finalPie").removeAttribute("class");
+
 };
 
 window.addEventListener("load", function() {
-  document.querySelector("form#pizzaToppings").addEventListener("submit", handleForm);
+  document.querySelector("form#orderPizza").addEventListener("submit", handleForm);
 });
