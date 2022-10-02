@@ -29,21 +29,15 @@ Pizza.prototype.priceOfPizza = function() {
 //UI Logic
 
 function handleForm(event) {
-  const toppings = [];
-  const size = document.querySelector("#size").value
-  const userSelections = document.querySelectorAll("input:checked");
-  const userSelectionsArray = Array.from(userSelections);
-
-  
-
-  userSelectionsArray.forEach(function(element) {
-    toppings.push(this.value);
-  });
-
-  let newPizza = new Pizza(size, toppings);
-  let pizzaPrice = newPizza.priceOfPizza();
-  getElementById("#priceResult").textContent = pizzaPrice
-}
+  event.preventDefault();
+  const pizzaSize = document.querySelector("input[name='pizza-size']:checked").value;
+  const toppings = document.getElementsByName("toppings");
+  const checkedToppings = [];
+  for(let i=0; i < toppings.length; i+=1){
+    if (toppings[i].checked === true) {
+      checkedToppings.push(toppings[i].value);
+    }
+  };
 
 //window.addEventListener("load", function() {
  // document.querySelector("form#pizzaToppings").addEventListener("submit", handleForm);
