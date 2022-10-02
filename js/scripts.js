@@ -4,13 +4,6 @@ function Pizza(size, toppings) {
   this.price = 0;
 }
 
-Pizza.prototype.addSize = function(pizzaSize) {
-  this.size.push(pizzaSize);
-};
-
-Pizza.prototype.addToppings = function(toppings) {
-  this.toppings += 1;
-};
 
 Pizza.prototype.priceOfPizza = function() {
   this.price = 0;
@@ -27,7 +20,7 @@ Pizza.prototype.priceOfPizza = function() {
 };
 
 Pizza.prototype.orderOut = function() {
-  let describeOrder = "You pizza is a " + this.size + " and costs $" + this.price;
+  let describeOrder = "Your pizza is a " + this.size + " and costs $" + this.price;
   return describeOrder;
 };
 //UI Logic
