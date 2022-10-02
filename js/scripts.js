@@ -36,7 +36,8 @@ function handleForm(event) {
     }
   };
 
-  let pizzaOrder = new Pizza(pizzaSize, checkedToppings)
+
+  let pizzaOrder = new Pizza(pizzaSize, checkedToppings);
   let orderOutput = pizzaOrder.orderOut();
 
   document.getElementById("finalPie").innerText = orderOutput
