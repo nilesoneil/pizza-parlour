@@ -7,7 +7,7 @@ function Pizza(size, toppings) {
 
 Pizza.prototype.priceOfPizza = function() {
   this.price = 0;
-  for(let index = 0; index < this.topping.length; index++) {
+  for(let index = 0; index < this.toppings.length; index++) {
     this.price += 1;
   } if(this.size === "small") {
     this.price += 12;
@@ -28,7 +28,7 @@ Pizza.prototype.orderOut = function() {
 function handleForm(event) {
   event.preventDefault();
   const pizzaSize = document.querySelector("input[name='pizza-size']:checked").value;
-  const toppings = document.getElementsByName("toppings");
+  const toppings = document.getElementsByName("ingredient");
   const checkedToppings = [];
   for(let i=0; i < toppings.length; i+=1){
     if (toppings[i].checked === true) {
@@ -38,13 +38,16 @@ function handleForm(event) {
 
 
   let pizzaOrder = new Pizza(pizzaSize, checkedToppings);
+  pizzaOrder.priceOfPizza();
   let orderOutput = pizzaOrder.orderOut();
+  console.log(orderOutput);
 
-  document.getElementById("finalPie").innerText = orderOutput
-  document.getElementById("finalPie").removeAttribute("class");
+  document.getElementById("finalPie").innerText = orderOutput;
+  document.getElementById("finalPie").setAttribute("class", "beep");
+  };
+  window.addEventListener("load", function() {
+    document.querySelector("form#orderPizza").addEventListener("submit", handleForm);
+  })
+  
+  
 
-};
-
-window.addEventListener("load", function() {
-  document.querySelector("form#orderPizza").addEventListener("submit", handleForm);
-});
