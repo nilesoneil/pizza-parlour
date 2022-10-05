@@ -43,7 +43,7 @@ function handleForm(event) {
   console.log(orderOutput);
 
   document.getElementById("finalPie").innerText = orderOutput;
-  document.getElementById("finalPie").setAttribute("class", "beep");
+  document.getElementById("finalPie").removeAttribute("class");
   };
   window.addEventListener("load", function() {
     document.querySelector("form#orderPizza").addEventListener("submit", handleForm);
